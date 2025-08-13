@@ -1,25 +1,145 @@
-# README
+# Engineer Connect(名前要検討) - Backend API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+Engineer Connect は、AI を活用したソフトウェアエンジニア向けのプラットフォームのバックエンド API です。GitHub プロファイルの分析機能とエンジニア同士のネットワーキングを支援します。
 
-* Ruby version
+このプロジェクトは、[元のリポジトリ](https://github.com/tsukuneA1/hackathon_w_app) から派生し、モノレポ構成から独立したバックエンドプロジェクトとして分離されました。
 
-* System dependencies
+## 技術スタック
 
-* Configuration
+- **Backend**: Ruby on Rails 8 (API モード)
+- **Database**: PostgreSQL
+- **Authentication**: GitHub OAuth + JWT
+- **AI Integration**: OpenAI GPT-3.5-turbo
+- **Platform**: Docker 対応
 
-* Database creation
+## プロジェクトの目的
 
-* Database initialization
+- 新しいエンジニアの技術コミュニティ参入支援
+- AI によるコーディングスキルの客観的な可視化
+- 技術的なコミュニケーションの促進
+- エンジニアの専門的成長をサポート
 
-* How to run the test suite
+## 主要機能
 
-* Services (job queues, cache servers, search engines, etc.)
+- GitHub OAuth 認証
+- リポジトリデータの同期・分析
+- AI を活用したプロファイル分析
+- コード品質の評価
+- スキルベースのエンジニアマッチング
 
-* Deployment instructions
+## MVC アーキテクチャ図
 
-* ...
-# hackathon_w_app_backend
+```
+┌─────────────────────────────────────────────────────────────┐
+│                       Frontend (Next.js)                    │
+│                   ┌─────────────────────┐                   │
+│                   │     View Layer      │                   │
+│                   │   (React Components) │                   │
+│                   └─────────────────────┘                   │
+└─────────────────────────┬───────────────────────────────────┘
+                          │ HTTP API Requests
+                          │
+┌─────────────────────────▼───────────────────────────────────┐
+│                    Backend (Rails 8 API)                    │
+│                                                             │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐│
+│  │   Controllers   │  │     Models      │  │    Views     ││
+│  │                 │  │                 │  │   (JSON)     ││
+│  │ • AuthController│  │ • User Model    │  │              ││
+│  │ • UserController│  │ • Repo Model    │  │ • JSON       ││
+│  │ • RepoController│  │ • Analysis Model│  │   Response   ││
+│  │ • AIController  │  │                 │  │              ││
+│  └─────────────────┘  └─────────────────┘  └──────────────┘│
+│           │                     │                           │
+│           │                     │                           │
+│  ┌────────▼─────────────────────▼──────────────────────────┐│
+│  │                  Service Layer                          ││
+│  │                                                         ││
+│  │ • GitHub API Integration Service                        ││
+│  │ • OpenAI Integration Service                            ││
+│  │ • Profile Analysis Service                              ││
+│  │ • Authentication Service                                ││
+│  └─────────────────────────────────────────────────────────┘│
+└─────────────────────────┬───────────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────────┐
+│                     Database Layer                          │
+│                                                             │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐│
+│  │   PostgreSQL    │  │   External APIs │  │    Cache     ││
+│  │                 │  │                 │  │              ││
+│  │ • users         │  │ • GitHub API    │  │ • Redis      ││
+│  │ • repositories  │  │ • OpenAI API    │  │   (Optional) ││
+│  │ • analyses      │  │                 │  │              ││
+│  │ • sessions      │  │                 │  │              ││
+│  └─────────────────┘  └─────────────────┘  └──────────────┘│
+└─────────────────────────────────────────────────────────────┘
+```
+
+## ターゲットユーザー
+
+- AI 支援を活用するエンジニア
+- 技術メンター
+- 技術コミュニティのメンバー
+- スキル向上を目指す学習者
+
+## 開発状況
+
+- プロジェクト基盤構築（進行中）
+- GitHub OAuth 実装（進行中）
+- データベース設計（進行中）
+- AI 連携機能の開発準備
+
+## セットアップ
+
+### 前提条件
+
+- Ruby 3.2+
+- PostgreSQL
+- Docker (オプション)
+
+### ローカル開発環境構築
+
+1. リポジトリのクローン
+```bash
+git clone https://github.com/tsukuneA1/hackathon_w_app_backend
+cd backend
+```
+
+2. 依存関係のインストール
+```bash
+bundle install
+```
+
+3. データベースのセットアップ
+```bash
+rails db:create
+rails db:migrate
+```
+
+4. 環境変数の設定
+```bash
+cp .env.example .env
+# .env ファイルを編集して必要な環境変数を設定
+```
+
+5. サーバーの起動
+```bash
+rails server
+```
+
+## ライセンス
+
+MIT License
+
+## 関連リンク
+
+- [元のリポジトリ](https://github.com/tsukuneA1/hackathon_w_app)
+- フロントエンド: Next.js 15 + TypeScript
+- AI 連携: OpenAI GPT-3.5-turbo
+
+---
+
+**注意**: このプロジェクトは開発初期段階にあり、機能は継続的に追加・更新されます。
