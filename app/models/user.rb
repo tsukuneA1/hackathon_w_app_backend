@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   before_validation :normalize_fields
 
-  validates :provider, presence: true, message: "必須項目です"
+  validates :provider, presence: { message: "必須項目です" }
   validates :uid,      presence: true, uniqueness: { scope: :provider, message: "すでに登録されています" }
   validates :username, presence: true, uniqueness: { case_sensitive: false, message: "すでに使用されています" }
 
