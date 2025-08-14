@@ -4,17 +4,15 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :provider, null: false, default: "github"
       t.string :uid, null: false
       t.string :username, null: false
-      t.string :email, null:true
-      t.string :name, null:true
-      t.string :avatar_url, null:true
-      t.datetime :last_login_at, null:true
+      t.string :email, null: true
+      t.string :name, null: true
+      t.string :avatar_url, null: true
+      t.datetime :last_login_at, null: true
 
       t.timestamps
     end
-    add_index :users, [:provider, :uid], unique: true
+    add_index :users, [ :provider, :uid ], unique: true
     add_index :users, :username, unique: true
     add_index :users, :email, unique: true, where: "email IS NOT NULL"
   end
 end
-
-
