@@ -119,21 +119,10 @@ rails db:create
 rails db:migrate
 ```
 
-4. 環境変数の設定
-これ一旦今はなしで。開発が進んでいってjwtの発行とかができるようになったらenv新しく生えます
-```bash
-cp .env.example .env
-# .env ファイルを編集して必要な環境変数を設定
-```
-
-5. サーバーの起動
+4. サーバーの起動
 ```bash
 rails server
 ```
-
-## ライセンス
-
-MIT License
 
 ## 関連リンク
 
