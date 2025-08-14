@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[8.0]
       t.string :email, null: true
       t.string :name, null: true
       t.string :avatar_url, null: true
-      t.datetime :last_login_at, null: true
+      t.datetime :last_login_at, null: true, default: nil # デフォルト値を明示
 
       t.timestamps
     end
