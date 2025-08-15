@@ -36,7 +36,7 @@ Engineer Connect は、AI を活用したソフトウェアエンジニア向け
 │                       Frontend (Next.js)                    │
 │                   ┌─────────────────────┐                   │
 │                   │     View Layer      │                   │
-│                   │   (React Components) │                   │
+│                   │   (React Components) │                  │
 │                   └─────────────────────┘                   │
 └─────────────────────────┬───────────────────────────────────┘
                           │ HTTP API Requests
@@ -44,14 +44,14 @@ Engineer Connect は、AI を活用したソフトウェアエンジニア向け
 ┌─────────────────────────▼───────────────────────────────────┐
 │                    Backend (Rails 8 API)                    │
 │                                                             │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐│
-│  │   Controllers   │  │     Models      │  │    Views     ││
-│  │                 │  │                 │  │   (JSON)     ││
-│  │ • AuthController│  │ • User Model    │  │              ││
-│  │ • UserController│  │ • Repo Model    │  │ • JSON       ││
-│  │ • RepoController│  │ • Analysis Model│  │   Response   ││
-│  │ • AIController  │  │                 │  │              ││
-│  └─────────────────┘  └─────────────────┘  └──────────────┘│
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
+│  │   Controllers   │  │     Models      │  │    Views     │ │
+│  │                 │  │                 │  │   (JSON)     │ │
+│  │ • AuthController│  │ • User Model    │  │              │ │
+│  │ • UserController│  │ • Repo Model    │  │ • JSON       │ │
+│  │ • RepoController│  │ • Analysis Model│  │   Response   │ │
+│  │ • AIController  │  │                 │  │              │ │
+│  └─────────────────┘  └─────────────────┘  └──────────────┘ │
 │           │                     │                           │
 │           │                     │                           │
 │  ┌────────▼─────────────────────▼──────────────────────────┐│
@@ -67,14 +67,14 @@ Engineer Connect は、AI を活用したソフトウェアエンジニア向け
 ┌─────────────────────────▼───────────────────────────────────┐
 │                     Database Layer                          │
 │                                                             │
-│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐│
-│  │   PostgreSQL    │  │   External APIs │  │    Cache     ││
-│  │                 │  │                 │  │              ││
-│  │ • users         │  │ • GitHub API    │  │ • Redis      ││
-│  │ • repositories  │  │ • OpenAI API    │  │   (Optional) ││
-│  │ • analyses      │  │                 │  │              ││
-│  │ • sessions      │  │                 │  │              ││
-│  └─────────────────┘  └─────────────────┘  └──────────────┘│
+│  ┌─────────────────┐  ┌─────────────────┐  ┌──────────────┐ │
+│  │   PostgreSQL    │  │   External APIs │  │    Cache     │ │
+│  │                 │  │                 │  │              │ │
+│  │ • users         │  │ • GitHub API    │  │ • Redis      │ │
+│  │ • repositories  │  │ • OpenAI API    │  │   (Optional) │ │
+│  │ • analyses      │  │                 │  │              │ │
+│  │ • sessions      │  │                 │  │              │ │
+│  └─────────────────┘  └─────────────────┘  └──────────────┘ │
 └─────────────────────────────────────────────────────────────┘
 ```
 
