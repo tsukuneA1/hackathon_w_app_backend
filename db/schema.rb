@@ -18,13 +18,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_14_020000) do
     t.string "provider", default: "github", null: false
     t.string "uid", null: false
     t.string "username", null: false
-    t.string "email"
     t.string "name"
     t.string "avatar_url"
     t.datetime "last_login_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, where: "(email IS NOT NULL)"
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

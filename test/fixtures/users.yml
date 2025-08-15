@@ -4,7 +4,6 @@ one:
   provider: MyString
   uid: MyString
   username: MyString
-  email: MyString
   name: MyString
   avatar_url: MyString
   last_login_at: 2025-08-14 10:53:05
@@ -13,7 +12,6 @@ two:
   provider: MyString
   uid: MyString
   username: MyString
-  email: MyString
   name: MyString
   avatar_url: MyString
   last_login_at: 2025-08-14 10:53:05
