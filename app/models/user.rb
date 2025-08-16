@@ -9,6 +9,16 @@ class User < ApplicationRecord
             format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
                       message: "正しいURLを入力してください" }
 
+  def update_login_info(ip:, user_agent:)
+    ua = user_agent.to_s[0, 255]
+    update_columns(
+      last_login_at: Time.current,
+      last_login_ip: ip.presence,
+      last_login_user_agent: ua,
+      updated_at: Time.current
+    )
+  end
+
   private
 
   def normalize_fields
