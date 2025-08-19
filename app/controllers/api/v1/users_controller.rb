@@ -1,4 +1,5 @@
-module V1
+module Api
+  module V1
     class UsersController < ApplicationController
       def index
         users = User.order(created_at: :desc)
@@ -20,4 +21,5 @@ module V1
         ]
       end
     end
+  end
 end
