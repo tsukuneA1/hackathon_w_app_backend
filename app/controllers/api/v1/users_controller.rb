@@ -4,7 +4,10 @@ module V1
         users = User.order(created_at: :desc)
         render json: users.as_json(only: visible_fields)
       end
-      def show
+       def show
+            unless params[:id].to_s.match?(/\A\d+\z/)
+                render json: { error: "不正なIDです" }, status: :bad_request and return
+            end
         user = User.find(params[:id])
         render json: user.as_json(only: visible_fields)
       rescue ActiveRecord::RecordNotFound
