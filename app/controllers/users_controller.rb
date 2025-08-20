@@ -1,4 +1,4 @@
-class UsersController < ApiController
+class UsersController < ApplicationController
   before_action :validate_id_integer, only: :show
 
   def index
