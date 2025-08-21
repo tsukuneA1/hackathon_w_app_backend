@@ -1,17 +1,14 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# test/fixtures/users.yml
+# (provider, uid) をユニークに
 
-one:
-  provider: MyString
-  uid: MyString
-  username: MyString
-  name: MyString
-  avatar_url: MyString
-  last_login_at: 2025-08-14 10:53:05
+alice:
+  provider: github
+  uid: u_github_1
+  username: alice
+  name: Alice
 
-two:
-  provider: MyString
-  uid: MyString
-  username: MyString
-  name: MyString
-  avatar_url: MyString
-  last_login_at: 2025-08-14 10:53:05
+bob:
+  provider: google
+  uid: u_google_1
+  username: bob
+  name: Bob
